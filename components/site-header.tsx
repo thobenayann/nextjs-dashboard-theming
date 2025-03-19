@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { ThemeToggle } from "./theme-toggle"
+import { ThemeSelector } from "./theme-selector"
 
+// En-tête du site qui contient les contrôles de thème
 export function SiteHeader() {
   return (
     <header className="flex h-(--header-height) shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height)">
@@ -14,6 +16,9 @@ export function SiteHeader() {
         />
         <h1 className="text-base font-medium">Documents</h1>
         <div className="ml-auto flex items-center gap-2">
+          {/* Sélecteur de thème de couleur */}
+          <ThemeSelector />
+          {/* Bascule entre thème clair/sombre */}
           <ThemeToggle />
         </div>
       </div>

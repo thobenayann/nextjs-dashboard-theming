@@ -1,8 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 Next.js Theme Switcher
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-15.2.3-black)
+![React](https://img.shields.io/badge/React-19.0.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0+-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0.0-38B2AC)
+![next-themes](https://img.shields.io/badge/next--themes-0.4.6-purple)
 
-First, run the development server:
+A modern Next.js application with an advanced theming system, allowing users to switch between different modes (light/dark) and color palettes.
+
+## 📑 Table of Contents
+
+- [🎨 Next.js Theme Switcher](#-nextjs-theme-switcher)
+  - [📑 Table of Contents](#-table-of-contents)
+  - [🚀 Getting Started](#-getting-started)
+  - [🎭 Theming System](#-theming-system)
+    - [Available Themes](#available-themes)
+    - [How It Works](#how-it-works)
+  - [🧩 Project Structure](#-project-structure)
+  - [🛠️ Technologies Used](#️-technologies-used)
+  - [👨‍💻 About the Developer](#-about-the-developer)
+    - [Yann Thobena](#yann-thobena)
+  - [📚 Resources](#-resources)
+  - [📝 Contact](#-contact)
+
+## 🚀 Getting Started
+
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +51,73 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎭 Theming System
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This application implements a two-level theming system:
 
-## Learn More
+1. **Light/Dark Mode** - Managed by `next-themes`, which adds/removes the `dark` class on the HTML element
+2. **Color Themes** - Managed by a custom `ActiveThemeProvider`, which adds classes like `theme-blue`, `theme-purple`, etc. to the body
 
-To learn more about Next.js, take a look at the following resources:
+### Available Themes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Standard**: Default, Blue, Green, Amber, Purple, Pink, Midnight
+- **Scaled**: Versions of standard themes with adjusted scaling
+- **Monospace**: Themes with monospace fonts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### How It Works
 
-## Deploy on Vercel
+The system uses:
+- Cookies to persist theme preferences
+- CSS variables to define colors
+- CSS classes to apply themes
+- React context to manage theme state
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧩 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+├── app/
+│   ├── layout.tsx       # Main layout with theme providers
+│   └── globals.css      # Global styles and theme definitions
+├── components/
+│   ├── active-theme.tsx # Custom provider for themes
+│   ├── theme-selector.tsx # Theme selector component
+│   ├── theme-toggle.tsx # Light/dark mode toggle
+│   └── providers/
+│       └── theme-provider.tsx # Wrapper for next-themes
+```
+
+## 🛠️ Technologies Used
+
+- **Next.js** (v15.2.3) - React framework
+- **React** (v19.0.0) - UI library
+- **TypeScript** (v5+) - Static typing
+- **Tailwind CSS** (v4) - Utility-first CSS framework
+- **Radix UI** - Accessible UI primitives
+- **next-themes** (v0.4.6) - Light/dark mode management
+- **Lucide React** (v0.483.0) - Icon library
+
+## 👨‍💻 About the Developer
+
+### Yann Thobena
+
+Application Developer at **IPANOVA**, Yann specializes in creating modern and accessible user interfaces. With expertise in React, Next.js, and TypeScript, he designs elegant solutions that combine performance and user experience.
+
+At IPANOVA, Yann contributes to the digital transformation of businesses by developing innovative web applications that meet specific client needs.
+
+## 📚 Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Radix UI Documentation](https://www.radix-ui.com/docs/primitives/overview/introduction)
+- [next-themes Documentation](https://github.com/pacocoursey/next-themes)
+
+---
+
+Developed with ❤️ by [Yann Thobena](https://github.com/thobenayann) at [IPANOVA](https://www.ipanova.com)
+
+## 📝 Contact
+
+- [Email](mailto:yann.thobena@ipanova.com)
+- [LinkedIn](https://www.linkedin.com/in/yannthobena/)
+- [GitHub](https://github.com/thobenayann)
